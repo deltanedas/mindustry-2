@@ -5,6 +5,6 @@
 	"main": "mindustry2.Mindustwo",
 	"description": "The sequel everyone has been waiting for.\n[red]Incompatible with most mods.[]",
 	"repo": "deltanedas/mindustry-2",
-	"version": "1.0.0",
+	"version": "0.0.1",
 	"minGameVersion": 126
 }
