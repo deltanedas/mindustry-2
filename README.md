@@ -1,8 +1,8 @@
 ![Github Workflows](https://github.com/deltanedas/mindustry-2/workflows/Java%20CI/badge.svg)
 
-# Mindustry 2
+# [Mindustry](https://github.com/Anuken/Mindustry) 2
 
-Among Us 2, but it's Mindustry instead of Among Us.
+[Among Us](https://en.m.wikipedia.org/wiki/Among_Us) 2, but it's [Mindustry](https://github.com/Anuken/Mindustry) instead of [Among Us](https://en.m.wikipedia.org/wiki/Among_Us).
 
 Download a precompiled build [here](https://github.com/deltanedas/mindustry-2/releases/latest)
 
