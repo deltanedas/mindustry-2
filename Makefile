@@ -58,7 +58,7 @@ Mindustry2-Desktop.jar: $(classes) $(assets)
 Mindustry2.jar: Mindustry2-Desktop.jar
 	@printf "\033[33m> D8\033[0m\t%s\n" $@
 	$(D8) $(D8FLAGS) --output build $^
-	cp mindustry-2-Desktop.jar $@
+	cp Mindustry2-Desktop.jar $@
 	cd build; zip -qg ../$@ classes.dex
 
 install: build
