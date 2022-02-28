@@ -1,0 +1,10 @@
+{
+	"name": "mindustry-2",
+	"displayName": "Mindustry [accent]2[]",
+	"author": "deltanedas",
+	"main": "mindustry2.Mindustwo",
+	"description": "The sequel everyone has been waiting for.\n[red]Incompatible with most mods.[]",
+	"repo": "deltanedas/mindustry-2",
+	"version": "1.0.0",
+	"minGameVersion": 126
+}
