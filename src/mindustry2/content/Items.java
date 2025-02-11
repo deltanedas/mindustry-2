@@ -4,11 +4,10 @@ import arc.graphics.*;
 import mindustry.ctype.*;
 import mindustry.type.*;
 
-public class Items implements ContentList {
+public class Items {
 	public static Item zinc, iron, diamond, sand, chrome, steel;
 
-	@Override
-	public void load() {
+	public static void load() {
 		zinc = new Item("zinc", Color.valueOf("aaaa7f")) {{
 			hardness = 1;
 			cost = 0.5f;

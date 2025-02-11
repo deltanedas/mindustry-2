@@ -6,6 +6,7 @@ import arc.*;
 import arc.util.*;
 import mindustry.*;
 import mindustry.content.TechTree;
+import mindustry.core.*;
 import mindustry.game.EventType.*;
 import mindustry.gen.*;
 import mindustry.mod.*;
@@ -15,7 +16,6 @@ import mindustry.ui.dialogs.*;
 import arc.struct.Seq;
 import mindustry.world.Block;
 import mindustry.world.blocks.environment.OreBlock;
-import mindustry.world.blocks.environment.WallOreBlock;
 
 import static mindustry.content.TechTree.TechNode;
 
@@ -39,17 +39,17 @@ public class Mindustwo extends Mod {
 	@Override
 	public void loadContent() {
 		// mindustry
-		Vars.content.clear();
+		Vars.content = new ContentLoader();
 		TechTree.all.clear();
 
 		// mindustry 2
-		new StatusEffects().load();
-		new Items().load();
-		new Liquids().load();
-		new Bullets().load();
-		new UnitTypes().load();
-		new Blocks().load();
-		TechTree.root = new TechNode(null, Blocks.coreAnuke, new ItemStack[] {});
+		StatusEffects.load();
+		Items.load();
+		Liquids.load();
+		Bullets.load();
+		UnitTypes.load();
+		Blocks.load();
+		TechTree.roots = Seq.with(new TechNode(null, Blocks.coreAnuke, new ItemStack[] {}));
 
 		// fix the menu renderer, everything is sand and acid
 		mindustry.content.Blocks.air = Blocks.air;
@@ -82,7 +82,7 @@ public class Mindustwo extends Mod {
 		mindustry.content.Blocks.deepwater = Blocks.deepAcid;
 		mindustry.content.Blocks.sandWater = Blocks.sandAcid;
 
-		Seq<Block> ores = Vars.content.blocks().select(b -> b instanceof OreBlock && !(b instanceof WallOreBlock));;
+		Seq<Block> ores = Vars.content.blocks().select(b -> b instanceof OreBlock);;
 		Log.info("Ores: @", ores);
 	}
 }

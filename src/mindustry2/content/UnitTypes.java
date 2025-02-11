@@ -6,7 +6,7 @@ import mindustry.ctype.*;
 import mindustry.type.*;
 import mindustry.type.weapons.*;
 
-public class UnitTypes implements ContentList {
+public class UnitTypes {
 /*	// mech
 	public static @EntityDef(value = {Unitc.class}, legacy = true) UnitType worm;
 
@@ -28,8 +28,8 @@ public class UnitTypes implements ContentList {
 	}*/
 	public static UnitType worm;
 
-	public void load() {
-		new mindustry.content.UnitTypes().load();
+	public static void load() {
+		mindustry.content.UnitTypes.load();
 		worm = mindustry.content.UnitTypes.dagger;
 	}
 }

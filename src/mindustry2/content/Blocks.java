@@ -15,10 +15,11 @@ import mindustry.world.meta.*;
 
 import static mindustry.type.ItemStack.*;
 
-public class Blocks implements ContentList {
+public class Blocks {
 	public static Block
 		// environment
 		air, spawn, cliff, acid, deepAcid, sandAcid, sand, sandWall,
+		shale, shaleWall, ice, iceWall, moss, dirt, dacite, stone, salt,
 		basalt, hotrock, magmarock,
 
 		// ores
@@ -49,8 +50,7 @@ public class Blocks implements ContentList {
 		// turrets
 		duo;
 
-	@Override
-	public void load() {
+	public static void load() {
 		// environment
 		air = new AirBlock("air");
 		spawn = new SpawnBlock("spawn");
@@ -104,6 +104,42 @@ public class Blocks implements ContentList {
 			sandAcid.asFloor().wall = acid.asFloor().wall = deepAcid.asFloor().wall = this;
 		}};
 
+		shale = new Floor("shale") {{
+			variants = 3;
+			attributes.set(Attribute.oil, 1.6f);
+		}};
+
+		shaleWall = new StaticWall("shale-wall");
+
+		ice = new Floor("ice") {{
+			dragMultiplier = 0.35f;
+			speedMultiplier = 0.9f;
+			attributes.set(Attribute.water, 0.4f);
+			albedo = 0.65f;
+		}};
+
+
+		iceWall = new StaticWall("ice-wall") {{
+			albedo = 0.6f;
+		}};
+
+		moss = new Floor("moss") {{
+			variants = 3;
+			attributes.set(Attribute.spores, 0.15f);
+		}};
+
+		dirt = new Floor("dirt");
+
+		dacite = new Floor("dacite");
+
+		stone = new Floor("stone");
+
+		salt = new Floor("salt") {{
+			variants = 0;
+			attributes.set(Attribute.water, -0.3f);
+			attributes.set(Attribute.oil, 0.3f);
+		}};
+
 		basalt = new Floor("basalt") {{
 			attributes.set(Attribute.water, -0.25f);
 		}};
@@ -153,5 +189,13 @@ public class Blocks implements ContentList {
 
 			unitCapModifier = 8;
 		}};
+
+		// overrides for menu
+		mindustry.content.Blocks.oreCopper = oreZinc;
+		mindustry.content.Blocks.oreLead = oreIron;
+		mindustry.content.Blocks.oreScrap = oreZinc;
+		mindustry.content.Blocks.oreCoal = oreIron;
+		mindustry.content.Blocks.oreTitanium = oreZinc;
+		mindustry.content.Blocks.oreThorium = oreIron;
 	}
 }

@@ -4,11 +4,10 @@ import arc.graphics.*;
 import mindustry.ctype.*;
 import mindustry.type.*;
 
-public class StatusEffects implements ContentList {
+public class StatusEffects {
 	public static StatusEffect corroded;
 
-	@Override
-	public void load() {
+	public static void load() {
 		corroded = new StatusEffect("corroded") {{
 			color = Color.valueOf("55ff00");
 			speedMultiplier = 0.94f;

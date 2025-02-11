@@ -3,14 +3,13 @@ package mindustry2.content;
 import mindustry.ctype.*;
 import mindustry.entities.bullet.*;
 
-public class Bullets implements ContentList {
+public class Bullets {
 	public static BulletType
 
 	// standard
 	standardIron;
 
-	@Override
-	public void load() {
+	public static void load() {
 		standardIron = new BasicBulletType(2.5f, 9) {{
 			width = 7f;
 			height = 9f;
